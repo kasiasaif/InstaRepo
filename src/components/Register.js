@@ -40,8 +40,8 @@ const submitHandler = (e) => {
 };
   return(
     <div className="App">
-      <h1>{user}</h1>
-    {!user && (
+      
+    {!user ? (
       <div className="container">
          <div className="welcome">WELCOME ON INSTACLONE </div>
           <div className="register">Register now</div>
@@ -65,20 +65,24 @@ const submitHandler = (e) => {
         <button  className="button" onClick={() => setLogBool(!logBool)}><span>
             {logBool ? "Do you want to log in?" : "Do you want to sign up?"}
           </span></button>
-          <div>content</div>
-      </div>
-
-    )}
-    {<div><h2 className="user" >Welcome {user}</h2>
-    {arr.map((item,index)=>{
-      return(
-      <div className="row" >
-<div className="column"><p key={index}>{item.author}</p>                 <img  className="image" src= {item.download_url} alt="random"></img></div>
-      </div>)
-    })}</div>}
-  </div>
-);
-};
+         
+      </div>) : (<div >
+                <h2 className="user" >Welcome {user}</h2>
+                {arr.map((item, index)=>{
+              return(
+                <div className="row">
+                  <div className="column">
+                <p key={index}>{item.author}</p>
+                <img  className="image" src= {item.download_url} alt="random"></img></div>
+                </div>
+                
+              );
+            })}
+                </div>
+              )}
+            </div>
+            
+          )}
 
 export default Register;
 //     <div className="App">
