@@ -40,50 +40,92 @@ const submitHandler = (e) => {
 };
   return(
     <div className="App">
-    
-      {!user ?(
-        <div className="container">
-          <div className="welcome">WELCOME ON INSTACLONE </div>
+      <h1>{user}</h1>
+    {!user && (
+      <div className="container">
+         <div className="welcome">WELCOME ON INSTACLONE </div>
           <div className="register">Register now</div>
-          <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
+          <input
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+          />
+          {logBool && (
             <input
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Username"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
             />
-            {logBool && (
-              <input type="email"
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-              />
-            )}
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password" type="password"
-            />
-            <button className="button" type="submit"><span>Register</span></button>
-          </form>
-          <button className="button" onClick={() => setLogBool(!logBool)}><span>
-            {logBool ? "Do you want to log in?" : "Do you want to sign up?"}
-            </span></button>
-        </div>  ) : (<div >
-                <h2 className="user" >Welcome {user}</h2>
-                {arr.map((item, index)=>{
-              return(
-                <div className="row">
-                  <div className="column">
-                <p key={index}>{item.author}</p>
-                <img  className="image" src= {item.download_url} alt="random"></img></div>
-                </div>
-                
-              );
-            })}
-                </div>
-              )}
-            </div>
-            
           )}
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button  className="button" type="submit"><span>Register</span></button>
+        </form>
+        <button  className="button" onClick={() => setLogBool(!logBool)}><span>
+            {logBool ? "Do you want to log in?" : "Do you want to sign up?"}
+          </span></button>
+          <div>content</div>
+      </div>
+
+    )}
+    {<div><h2 className="user" >Welcome {user}</h2>
+    {arr.map((item,index)=>{
+      return(
+      <div className="row" >
+<div className="column"><p key={index}>{item.author}</p>                 <img  className="image" src= {item.download_url} alt="random"></img></div>
+      </div>)
+    })}</div>}
+  </div>
+);
+};
 
 export default Register;
+//     <div className="App">
+    
+//       {!user ?(
+//         <div className="container">
+//           <div className="welcome">WELCOME ON INSTACLONE </div>
+//           <div className="register">Register now</div>
+//           <form onSubmit={submitHandler}>
+//             <input
+//               onChange={(e) => setUsername(e.target.value)}
+//               placeholder="Username"
+//             />
+//             {logBool && (
+//               <input type="email"
+//                 onChange={(e) => setEmail(e.target.value)}
+//                 placeholder="Email"
+//               />
+//             )}
+//             <input
+//               onChange={(e) => setPassword(e.target.value)}
+//               placeholder="Password" type="password"
+//             />
+//             <button className="button" type="submit"><span>Register</span></button>
+//           </form>
+//           <button className="button" onClick={() => setLogBool(!logBool)}><span>
+//             {logBool ? "Do you want to log in?" : "Do you want to sign up?"}
+//             </span></button>
+//         </div>  ) : (<div >
+//                 <h2 className="user" >Welcome {user}</h2>
+//                 {arr.map((item, index)=>{
+//               return(
+//                 <div className="row">
+//                   <div className="column">
+//                 <p key={index}>{item.author}</p>
+//                 <img  className="image" src= {item.download_url} alt="random"></img></div>
+//                 </div>
+                
+//               );
+//             })}
+//                 </div>
+//               )}
+//             </div>
+            
+//           )}
+
+// export default Register;
 
 
 

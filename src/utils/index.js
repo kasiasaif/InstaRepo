@@ -39,7 +39,7 @@ export const logInFetch = async (username, password, setUser) => {
 
 export const tokenCheck = async (setUser) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}register`, {
       method: "GET",
       headers: { Authorization: `Bearer ${localStorage.getItem("myToken")}` },
     });
@@ -53,7 +53,7 @@ export const deleteUser = async (setUser) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${localStorage.getItem("MyToken")}` },
+      headers: { Authorization: `Bearer ${localStorage.getItem("myToken")}` },
     });
     const data = await response.json();
     if (data.message === "Success") {
