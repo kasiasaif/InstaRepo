@@ -39,7 +39,7 @@ export const logInFetch = async (username, password, setUser) => {
 
 export const tokenCheck = async (setUser) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_REST_API}register`, {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "GET",
       headers: { Authorization: `Bearer ${localStorage.getItem("myToken")}` },
     });

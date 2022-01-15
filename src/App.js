@@ -21,7 +21,7 @@ const App = () => {
     <Nav />
     <Routes>
     <Route  exact path="/"  element={<Home/>} />
-    <Route path="/register"  element={<Register/>} />
+    <Route path="/login"  element={<Register/>} />
     <Route path="/about" element={<About/>} />
     <Route path="/logout" element={<LoggedOut/>} />
     

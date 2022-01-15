@@ -14,7 +14,7 @@ return(
             
             <ul className="nav-links">
                 <Link style={navStyle} to="/">Home</Link>
-                <Link style={navStyle} to="/register">
+                <Link style={navStyle} to="/login">
                 <li>Register now</li>
                 </Link>
                 <Link style={navStyle} to="/about">
