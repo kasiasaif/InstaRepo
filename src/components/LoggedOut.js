@@ -1,7 +1,9 @@
 import "../App.css";
-import Register from "./Register";
+import {Link} from 'react-router-dom'
+
 
 export const LoggedOut = ({ user, setUser }) => {
+  
   const logOut = (e) => {
     e.preventDefault();
     localStorage.removeItem("myToken");
@@ -12,7 +14,7 @@ export const LoggedOut = ({ user, setUser }) => {
       <span className="logoutq">{user}Do you want to logout?</span>
       <div className="btncon">
 
-      <button className="btnout" onClick={logOut}><span></span>Log out</button></div>
+      <button className="btnout" onClick={logOut}><Link to="/"><span></span>Log out</Link></button></div>
     </div>
   );
 };

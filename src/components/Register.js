@@ -53,12 +53,12 @@ const submitHandler = (e) => {
           {logBool && (
             <input
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
+              placeholder="Email" type="email"
             />
           )}
           <input
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder="Password" type="password"
           />
           <button  className="button" type="submit"><span>Register</span></button>
         </form>
