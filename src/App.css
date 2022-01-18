@@ -50,7 +50,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffffff;
 }
 
 @keyframes App-logo-spin {
@@ -351,4 +351,10 @@ nav{
   .homeback{
     background-color: rgb(236, 177, 12);
 
+  }
+  .link{
+    color: #eee;
+  }
+  .link:hover{
+    color:pink
   }

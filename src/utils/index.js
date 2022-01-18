@@ -58,7 +58,7 @@ export const deleteUser = async (setUser) => {
     const data = await response.json();
     if (data.message === "Success") {
       setUser();
-      localStorage.removeItem("MyToken");
+      localStorage.removeItem("myToken");
     } else {
       throw new Error();
     }
